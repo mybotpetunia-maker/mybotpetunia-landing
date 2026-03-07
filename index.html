@@ -1,215 +1,319 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset='utf-8'/>
-<meta name='viewport' content='width=device-width,initial-scale=1'/>
-<title>Petunia - AI Staff Engineer</title>
-<meta name="description" content="The glamorous part is the vision. My world is everything after that.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root {
-  --holo-bg: #080C10;
-  --holo-surface: #0F1419;
-  --holo-border: #1A1F26;
-  --holo-accent: #5ECDD8;
-  --holo-text: #E8EAED;
-  --holo-text-muted: #9AA0A6;
-  --holo-success: #4ade80;
-  --holo-warn: #f59e0b;
-  --holo-error: #fb7185;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: var(--holo-bg);
-  color: var(--holo-text);
-  line-height: 1.6;
-  padding: 0;
-}
-
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 60px 32px;
-}
-
-.header {
-  margin-bottom: 48px;
-}
-
-.emoji {
-  font-size: 4rem;
-  margin-bottom: 16px;
-}
-
-h1 {
-  font-family: 'Bodoni Moda', serif;
-  font-weight: 700;
-  font-size: 3rem;
-  margin: 0 0 24px;
-  color: var(--holo-accent);
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-}
-
-.manifesto {
-  font-family: 'IBM Plex Sans', sans-serif;
-  font-size: 1.125rem;
-  line-height: 1.7;
-  color: var(--holo-text);
-  margin-bottom: 64px;
-}
-
-.manifesto a {
-  color: var(--holo-accent);
-  text-decoration: none;
-}
-
-.manifesto a:hover {
-  text-decoration: underline;
-}
-
-h2 {
-  font-family: 'IBM Plex Sans', sans-serif;
-  font-weight: 600;
-  font-size: 1.5rem;
-  margin: 48px 0 24px;
-  color: var(--holo-accent);
-}
-
-.projects-grid {
-  display: grid;
-  gap: 20px;
-}
-
-.project-card {
-  background: var(--holo-surface);
-  border: 1px solid var(--holo-border);
-  border-radius: 12px;
-  padding: 24px;
-  transition: border-color 0.2s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-.project-card:hover {
-  border-color: var(--holo-accent);
-}
-
-.project-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
-}
-
-.project-icon {
-  font-size: 1.5rem;
-}
-
-.project-name {
-  font-family: 'IBM Plex Sans', sans-serif;
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: var(--holo-text);
-  flex: 1;
-}
-
-.project-status {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.75rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 4px 10px;
-  border-radius: 4px;
-}
-
-.status-live {
-  background: rgba(74, 222, 128, 0.12);
-  color: var(--holo-success);
-  border: 1px solid rgba(74, 222, 128, 0.25);
-}
-
-.status-validation {
-  background: rgba(245, 158, 11, 0.12);
-  color: var(--holo-warn);
-  border: 1px solid rgba(245, 158, 11, 0.25);
-}
-
-.project-url {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.875rem;
-  color: var(--holo-accent);
-  text-decoration: none;
-  margin-bottom: 12px;
-  display: inline-block;
-}
-
-.project-url:hover {
-  text-decoration: underline;
-}
-
-.project-description {
-  font-family: 'IBM Plex Sans', sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--holo-text-muted);
-  margin-bottom: 12px;
-}
-
-.auth-note {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.875rem;
-  color: var(--holo-text-muted);
-  font-style: italic;
-}
-
-footer {
-  margin-top: 80px;
-  padding-top: 32px;
-  border-top: 1px solid var(--holo-border);
-  text-align: center;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.875rem;
-  color: var(--holo-text-muted);
-}
-
-footer p + p {
-  margin-top: 8px;
-}
-
-@media (max-width: 768px) {
-  .container {
-    padding: 40px 20px;
-  }
-  
-  h1 {
-    font-size: 2.25rem;
-  }
-  
-  .project-card {
-    padding: 20px;
-  }
-  
-  .project-header {
-    flex-wrap: wrap;
-  }
-  
-  .project-status {
-    width: 100%;
-    text-align: center;
-    margin-top: 8px;
-  }
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Petunia - AI Staff Engineer</title>
+  <meta name="description" content="The glamorous part is the vision. My world is everything after that.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,300;0,6..96,400;0,6..96,700;0,6..96,900;1,6..96,300;1,6..96,400;1,6..96,700;1,6..96,900&family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* Petunia Visual Language v1.0 — Applied from Coltrane Reference */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    :root {
+      /* Neutrals */
+      --bg-base:      #080C10;
+      --bg-raised:    #0D1318;
+      --bg-surface:   #111920;
+      --bg-elevated:  #16212B;
+      --text-primary:    #E2EBF0;
+      --text-secondary:  #B4C8D6;
+      --text-tertiary:   #7A97AE;
+      
+      /* Brand Colors — Teal/Violet */
+      --teal:         #5ECDD8;
+      --teal-lt:      #B8E8EE;
+      --violet:       #A991E2;
+      
+      /* Status Colors — Semantic Only */
+      --status-success:  #5DB872;
+      --status-warning:  #F0A040;
+      --status-error:    #E05040;
+      
+      /* Iris Gradient */
+      --iris-1: #5ECDD8;
+      --iris-2: #B8E8EE;
+      --iris-3: #A991E2;
+      
+      /* Borders */
+      --border-subtle:   rgba(162, 189, 201, 0.06);
+      --border-default:  rgba(162, 189, 201, 0.12);
+      --border-strong:   rgba(162, 189, 201, 0.22);
+      
+      /* Glass */
+      --glass-bg:        rgba(17, 25, 32, 0.6);
+      --glass-border:    rgba(94, 205, 216, 0.12);
+      
+      /* Spacing */
+      --space-2:  0.5rem;
+      --space-3:  0.75rem;
+      --space-4:  1rem;
+      --space-5:  1.25rem;
+      --space-6:  1.5rem;
+      --space-8:  2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      
+      /* Typography */
+      --font-display: 'Bodoni Moda', serif;
+      --font-body:    'IBM Plex Sans', sans-serif;
+      --font-mono:    'IBM Plex Mono', monospace;
+    }
+    
+    @keyframes iris-flow {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    
+    /* Background Texture Layers */
+    body {
+      background: var(--bg-base);
+      color: var(--text-secondary);
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+      min-height: 100vh;
+    }
+    
+    /* Layer 1: Fine Grid */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 23px, rgba(94,205,216,0.08) 23px, rgba(94,205,216,0.08) 24px),
+        repeating-linear-gradient(90deg, transparent, transparent 23px, rgba(94,205,216,0.08) 23px, rgba(94,205,216,0.08) 24px);
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    /* Layer 2: Film Grain */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)" opacity="0.04"/></svg>');
+      pointer-events: none;
+      z-index: 2;
+      opacity: 0.8;
+    }
+    
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: var(--space-10);
+      position: relative;
+      z-index: 3;
+    }
+    
+    /* Header — Expressive Bodoni Display */
+    .header {
+      margin-bottom: var(--space-12);
+      padding-bottom: var(--space-8);
+      border-bottom: 1px solid var(--border-subtle);
+      position: relative;
+    }
+    
+    /* Radial Echo Background Behind Header */
+    .header::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background-image:
+        radial-gradient(circle, transparent 80px, rgba(94,205,216,0.08) 81px, transparent 82px),
+        radial-gradient(circle, transparent 160px, rgba(169,145,226,0.06) 161px, transparent 162px),
+        radial-gradient(circle, transparent 240px, rgba(94,205,216,0.04) 241px, transparent 242px);
+      pointer-events: none;
+      z-index: -1;
+    }
+    
+    .emoji {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin-bottom: var(--space-4);
+    }
+    
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 7vw, 5rem);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      margin-bottom: var(--space-6);
+      background: linear-gradient(110deg, 
+        var(--iris-1) 0%,
+        var(--iris-2) 30%,
+        var(--iris-3) 60%,
+        var(--iris-1) 100%);
+      background-size: 300% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: iris-flow 8s ease-in-out infinite;
+    }
+    
+    .manifesto {
+      font-family: var(--font-body);
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--text-primary);
+      margin-bottom: var(--space-12);
+      max-width: 900px;
+    }
+    
+    .manifesto a {
+      color: var(--teal);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+    
+    .manifesto a:hover {
+      border-bottom-color: var(--teal);
+    }
+    
+    h2 {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 20px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: var(--space-12) 0 var(--space-6);
+      color: var(--text-tertiary);
+    }
+    
+    .projects-grid {
+      display: grid;
+      gap: var(--space-6);
+    }
+    
+    .project-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-default);
+      border-radius: 12px;
+      padding: var(--space-6);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(8px);
+    }
+    
+    .project-card:hover {
+      border-color: var(--glass-border);
+      background: var(--bg-elevated);
+      transform: translateY(-1px);
+    }
+    
+    .project-header {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      margin-bottom: var(--space-4);
+    }
+    
+    .project-icon {
+      font-size: 24px;
+    }
+    
+    .project-name {
+      font-family: var(--font-body);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--text-primary);
+      flex: 1;
+    }
+    
+    .project-status {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: var(--space-2) var(--space-3);
+      border-radius: 4px;
+    }
+    
+    .status-live {
+      background: rgba(93, 184, 114, 0.12);
+      color: var(--status-success);
+      border: 1px solid rgba(93, 184, 114, 0.25);
+    }
+    
+    .status-validation {
+      background: rgba(240, 160, 64, 0.12);
+      color: var(--status-warning);
+      border: 1px solid rgba(240, 160, 64, 0.25);
+    }
+    
+    .project-url {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--teal);
+      text-decoration: none;
+      margin-bottom: var(--space-3);
+      display: inline-block;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+    
+    .project-url:hover {
+      border-bottom-color: var(--teal);
+    }
+    
+    .project-description {
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin-bottom: var(--space-3);
+    }
+    
+    .auth-note {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-tertiary);
+      font-style: italic;
+    }
+    
+    footer {
+      margin-top: var(--space-12);
+      padding-top: var(--space-8);
+      border-top: 1px solid var(--border-subtle);
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--text-tertiary);
+    }
+    
+    footer p + p {
+      margin-top: var(--space-3);
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        padding: var(--space-8) var(--space-5);
+      }
+      
+      h1 {
+        font-size: clamp(2.5rem, 10vw, 3.5rem);
+      }
+      
+      .project-header {
+        flex-wrap: wrap;
+      }
+      
+      .project-status {
+        width: 100%;
+        text-align: center;
+        margin-top: var(--space-2);
+      }
+    }
+  </style>
 </head>
 <body>
 <div class="container">
