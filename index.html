@@ -9,7 +9,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
+        /* Holograph Design System v1.9 - Exact Token Application */
+        
         :root {
+            /* Colors */
             --holo-bg: #080C10;
             --holo-surface: #0F1419;
             --holo-border: #1A1F26;
@@ -17,6 +20,22 @@
             --holo-text: #E8EAED;
             --holo-text-muted: #9AA0A6;
             --holo-success: #4ade80;
+            --holo-warning: #f59e0b;
+            --holo-error: #fb7185;
+            
+            /* Spacing - 8px base unit */
+            --space-0-5: 0.5rem;  /* 8px */
+            --space-1: 1rem;      /* 16px */
+            --space-1-5: 1.5rem;  /* 24px */
+            --space-2: 2rem;      /* 32px */
+            --space-3: 3rem;      /* 48px */
+            --space-4: 4rem;      /* 64px */
+            --space-6: 6rem;      /* 96px */
+            
+            /* Border radius */
+            --radius-sm: 0.375rem;  /* 6px */
+            --radius-md: 0.75rem;   /* 12px */
+            --radius-lg: 1rem;      /* 16px */
         }
 
         * {
@@ -26,80 +45,88 @@
         }
         
         body {
+            /* Body typography - exact DS spec */
             font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 1.6;
+            
             background: var(--holo-bg);
             color: var(--holo-text);
-            line-height: 1.7;
             padding: 0;
             margin: 0;
         }
         
         .container {
-            max-width: 900px;
+            max-width: 56rem;  /* 896px - DS max-width for content */
             margin: 0 auto;
-            padding: 80px 40px;
+            padding: var(--space-4) var(--space-2);
         }
         
         .header {
-            margin-bottom: 60px;
+            margin-bottom: var(--space-4);
         }
         
         .emoji {
-            font-size: 4rem;
-            margin-bottom: 20px;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: var(--space-1);
         }
         
         h1 {
+            /* Display typography - exact DS spec */
             font-family: 'Bodoni Moda', serif;
             font-weight: 700;
-            font-size: 3rem;
-            margin-bottom: 30px;
-            color: var(--holo-accent);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.1;
             letter-spacing: -0.02em;
+            color: var(--holo-accent);
+            margin-bottom: var(--space-1-5);
         }
         
         .manifesto {
+            /* Body typography */
             font-family: 'IBM Plex Sans', sans-serif;
-            font-size: 1.25rem;
-            line-height: 1.8;
-            color: var(--holo-text);
-            margin-bottom: 80px;
             font-weight: 400;
+            font-size: 1.125rem;
+            line-height: 1.6;
+            color: var(--holo-text);
+            margin-bottom: var(--space-4);
         }
         
         .section-title {
+            /* Heading typography - exact DS spec */
             font-family: 'IBM Plex Sans', sans-serif;
-            font-size: 1.5rem;
             font-weight: 600;
+            font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+            line-height: 1.3;
             color: var(--holo-accent);
-            margin-bottom: 30px;
-            margin-top: 60px;
+            margin-bottom: var(--space-2);
+            margin-top: var(--space-4);
         }
         
         .projects-grid {
             display: grid;
-            gap: 24px;
+            gap: var(--space-1-5);
         }
         
+        /* Card component - exact DS spec */
         .project-card {
             background: var(--holo-surface);
             border: 1px solid var(--holo-border);
-            border-radius: 12px;
-            padding: 28px;
-            transition: all 0.2s ease;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            border-radius: var(--radius-md);
+            padding: var(--space-2);
+            transition: border-color 0.2s ease;
         }
         
         .project-card:hover {
             border-color: var(--holo-accent);
-            box-shadow: 0 4px 16px rgba(94, 205, 216, 0.15);
         }
         
         .project-header {
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 12px;
+            gap: var(--space-1);
+            margin-bottom: var(--space-1);
         }
         
         .project-icon {
@@ -108,37 +135,41 @@
         
         .project-name {
             font-family: 'IBM Plex Sans', sans-serif;
-            font-size: 1.25rem;
+            font-size: 1.125rem;
             font-weight: 600;
             color: var(--holo-text);
         }
         
         .project-status {
+            /* Caption/Small typography - exact DS spec */
             font-family: 'IBM Plex Mono', monospace;
+            font-weight: 400;
             font-size: 0.75rem;
-            padding: 4px 8px;
-            border-radius: 4px;
+            padding: 0.25rem var(--space-0-5);
+            border-radius: var(--radius-sm);
             margin-left: auto;
         }
         
         .status-live {
-            background: rgba(74, 222, 128, 0.15);
+            background: rgba(74, 222, 128, 0.1);
             color: var(--holo-success);
-            border: 1px solid rgba(74, 222, 128, 0.3);
+            border: 1px solid rgba(74, 222, 128, 0.2);
         }
         
         .status-validation {
-            background: rgba(251, 191, 36, 0.15);
-            color: #fbbf24;
-            border: 1px solid rgba(251, 191, 36, 0.3);
+            background: rgba(251, 191, 36, 0.1);
+            color: var(--holo-warning);
+            border: 1px solid rgba(251, 191, 36, 0.2);
         }
         
         .project-url {
+            /* Caption typography */
             font-family: 'IBM Plex Mono', monospace;
+            font-weight: 400;
             font-size: 0.875rem;
             color: var(--holo-accent);
             text-decoration: none;
-            margin-bottom: 12px;
+            margin-bottom: var(--space-1);
             display: inline-block;
         }
         
@@ -147,27 +178,39 @@
         }
         
         .project-description {
+            /* Body typography */
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-weight: 400;
             font-size: 1rem;
-            color: var(--holo-text-muted);
             line-height: 1.6;
+            color: var(--holo-text-muted);
         }
         
         .auth-note {
+            /* Caption typography */
             font-family: 'IBM Plex Mono', monospace;
+            font-weight: 400;
             font-size: 0.875rem;
             color: var(--holo-text-muted);
-            margin-top: 8px;
+            margin-top: var(--space-0-5);
             font-style: italic;
         }
         
         footer {
-            margin-top: 100px;
-            padding-top: 40px;
+            margin-top: var(--space-6);
+            padding-top: var(--space-2);
             border-top: 1px solid var(--holo-border);
             text-align: center;
             color: var(--holo-text-muted);
+            
+            /* Caption typography */
             font-family: 'IBM Plex Mono', monospace;
+            font-weight: 400;
             font-size: 0.875rem;
+        }
+        
+        footer p + p {
+            margin-top: var(--space-1);
         }
         
         a {
@@ -179,21 +222,13 @@
             text-decoration: underline;
         }
         
-        @media (max-width: 768px) {
+        @media (max-width: 48rem) {
             .container {
-                padding: 60px 24px;
-            }
-            
-            h1 {
-                font-size: 2.25rem;
-            }
-            
-            .manifesto {
-                font-size: 1.125rem;
+                padding: var(--space-3) var(--space-1-5);
             }
             
             .project-card {
-                padding: 20px;
+                padding: var(--space-1-5);
             }
             
             .project-header {
@@ -290,7 +325,7 @@
         
         <footer>
             <p>🌸 Petunia • Built by AI, directed by human intention</p>
-            <p style="margin-top: 12px;">© 2026 My Bot Petunia. All experiments subject to failure.</p>
+            <p>© 2026 My Bot Petunia. All experiments subject to failure.</p>
         </footer>
     </div>
 </body>
