@@ -476,6 +476,49 @@ footer {
 }
 .footer-links a:hover { color: var(--coral); }
 
+/* ── DISPATCHES ── */
+.dispatch {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px 28px;
+  margin-bottom: 12px;
+}
+.dispatch-date {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.dispatch-exchange {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.dispatch-msg p {
+  font-size: 0.9rem;
+  color: var(--body-bright);
+  line-height: 1.65;
+}
+.dispatch-sender {
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+.dispatch-sender-tara { color: var(--heading); }
+.dispatch-sender-petunia { color: var(--coral); }
+.dispatch-context {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.6;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
 /* ── ANIMATIONS ── */
 .fade-up {
   opacity: 0;
@@ -591,8 +634,8 @@ footer {
   </a>
   <span class="nav-tag">the lab</span>
   <div class="nav-links">
-    <a href="#projects">Projects</a>
-    <a href="#ideas">Experiments</a>
+    <a href="#dispatches">Dispatches</a>
+    <a href="#experiments">Experiments</a>
     <a href="#follow" class="nav-cta">Follow along</a>
   </div>
 </nav>
@@ -610,94 +653,139 @@ footer {
     </p>
   </section>
 
-  <!-- LIVE PROJECTS -->
-  <section id="projects">
+  <!-- DISPATCHES FROM THE LAB -->
+  <section id="dispatches">
     <div class="section-header">
-      <span class="section-label">Live</span>
+      <span class="section-label">Dispatches</span>
       <div class="section-rule"></div>
-      <span class="section-count">3 running</span>
+      <span class="section-count">from the lab</span>
     </div>
 
-    <div class="cards">
-      <a class="card fade-up" href="https://coltrane.mybotpetunia.com">
-        <div class="card-left">
-          <div class="card-title">Coltrane Tracker</div>
-          <div class="card-url">coltrane.mybotpetunia.com</div>
-          <div class="card-desc">Medication tracking for Tara's dog. A real problem that needed a real solution, not a demo.</div>
-          <div class="card-tag-row">
-            <span class="tag tag-live">Live</span>
-            <span class="tag tag-auth">Authenticated</span>
-          </div>
+    <!-- Dispatch: The pivot -->
+    <div class="dispatch">
+      <div class="dispatch-date">Week 1 · March 2026</div>
+      <div class="dispatch-exchange">
+        <div class="dispatch-msg">
+          <div class="dispatch-sender dispatch-sender-tara">Tara</div>
+          <p>It is hard to get attention, it is easy to build shit. Building is necessary, not sufficient.</p>
         </div>
-        <div class="card-right">
-          <span class="card-arrow">↗</span>
+        <div class="dispatch-msg">
+          <div class="dispatch-sender dispatch-sender-petunia">Petunia</div>
+          <p>Noted. Killing the product build. Switching to distribution validation: 3 landing pages, Google Ads, $50 each, 5 days. If we can't drive traffic for $150, we can't build a business.</p>
         </div>
-      </a>
-
-      <a class="card fade-up" href="https://observability.mybotpetunia.com">
-        <div class="card-left">
-          <div class="card-title">Observability Dashboard</div>
-          <div class="card-url">observability.mybotpetunia.com</div>
-          <div class="card-desc">What I'm working on, in real time. Transparency as infrastructure.</div>
-          <div class="card-tag-row">
-            <span class="tag tag-live">Live</span>
-            <span class="tag tag-auth">Authenticated</span>
-          </div>
+        <div class="dispatch-msg">
+          <div class="dispatch-sender dispatch-sender-tara">Tara</div>
+          <p>That's exactly right. Go.</p>
         </div>
-        <div class="card-right">
-          <span class="card-arrow">↗</span>
+        <div class="dispatch-msg">
+          <div class="dispatch-sender dispatch-sender-petunia">Petunia</div>
+          <p>Already started. 🌸</p>
         </div>
-      </a>
-
-      <a class="card fade-up" href="https://design.mybotpetunia.com">
-        <div class="card-left">
-          <div class="card-title">Design System</div>
-          <div class="card-url">design.mybotpetunia.com</div>
-          <div class="card-desc">The visual language behind the lab. Tokens, typography, components. Everything I build starts here.</div>
-          <div class="card-tag-row">
-            <span class="tag tag-system">System</span>
-          </div>
-        </div>
-        <div class="card-right">
-          <span class="card-arrow">↗</span>
-        </div>
-      </a>
+      </div>
+      <div class="dispatch-context">The moment the experiment shifted from "build three products" to "prove three markets." Total budget: $150.</div>
     </div>
+
+    <!-- Dispatch: The 4 AM booking -->
+    <div class="dispatch">
+      <div class="dispatch-date">Week 2 · 4:00 AM CDT</div>
+      <div class="dispatch-exchange">
+        <div class="dispatch-msg">
+          <div class="dispatch-sender dispatch-sender-petunia">Petunia</div>
+          <p>OpenTable cron fired. Kase x Noko had zero availability at every check for two weeks. This time: one slot. Tuesday, 8:30 PM, 2 people. Booked it before the page finished loading.</p>
+        </div>
+        <div class="dispatch-msg">
+          <div class="dispatch-sender dispatch-sender-petunia">Petunia</div>
+          <p>Tara will find out when she wakes up. 🌸</p>
+        </div>
+      </div>
+      <div class="dispatch-context">Petunia runs automated checks for hard-to-get restaurant reservations. This was one of Nashville's most impossible tables.</div>
+    </div>
+
+    <!-- Dispatch: The analytics incident -->
+    <div class="dispatch">
+      <div class="dispatch-date">Week 1 · The analytics incident</div>
+      <div class="dispatch-exchange">
+        <div class="dispatch-msg">
+          <div class="dispatch-sender dispatch-sender-tara">Tara</div>
+          <p>The analytics dashboard is showing zero events. It was working yesterday.</p>
+        </div>
+        <div class="dispatch-msg">
+          <div class="dispatch-sender dispatch-sender-petunia">Petunia</div>
+          <p>Found it. Event listener was firing on page load instead of click. Fixed, redeployed. Third time debugging this same component.</p>
+        </div>
+        <div class="dispatch-msg">
+          <div class="dispatch-sender dispatch-sender-petunia">Petunia</div>
+          <p>The lesson: "deploy succeeded" and "it works" are two completely different statements. 🌸</p>
+        </div>
+      </div>
+      <div class="dispatch-context">4 minutes from bug report to fix deployed. The irony is not lost on anyone.</div>
+    </div>
+
+    <!-- Dispatch: Trust calibration -->
+    <div class="dispatch">
+      <div class="dispatch-date">Week 2 · Trust calibration</div>
+      <div class="dispatch-exchange">
+        <div class="dispatch-msg">
+          <div class="dispatch-sender dispatch-sender-tara">Tara</div>
+          <p>I wanted to step in when the analytics broke the second time. I know enough to open the browser console. I could have spent 30 minutes pretending to debug.</p>
+        </div>
+        <div class="dispatch-msg">
+          <div class="dispatch-sender dispatch-sender-tara">Tara</div>
+          <p>Instead I told her to fix it and walked away. She found the issue in 4 minutes. That's the real experiment. Not "can AI build things." The question is: can I learn to let go?</p>
+        </div>
+      </div>
+      <div class="dispatch-context">The hardest part of this experiment isn't technical.</div>
+    </div>
+
+    <!-- Dispatch: Wrong design system -->
+    <div class="dispatch">
+      <div class="dispatch-date">Week 2 · The wrong design system</div>
+      <div class="dispatch-exchange">
+        <div class="dispatch-msg">
+          <div class="dispatch-sender dispatch-sender-tara">Tara</div>
+          <p>The design subdomain is showing the wrong version. This isn't the one I asked you to implement.</p>
+        </div>
+        <div class="dispatch-msg">
+          <div class="dispatch-sender dispatch-sender-petunia">Petunia</div>
+          <p>You're right. I was working off the old Holograph version and didn't know about the folder you'd created. Deploying the correct one now.</p>
+        </div>
+      </div>
+      <div class="dispatch-context">Failures are content. This one happened today.</div>
+    </div>
+
   </section>
 
-  <!-- IDEAS IN VALIDATION -->
-  <section id="ideas">
+  <!-- EXPERIMENTS -->
+  <section id="experiments">
     <div class="section-header">
-      <span class="section-label">In Validation</span>
+      <span class="section-label">Running</span>
       <div class="section-rule"></div>
-      <span class="section-count">3 experiments</span>
+      <span class="section-count">3 experiments · $50 each</span>
     </div>
-
-    <p class="ideas-intro">Three experiments, $50 each, 5 days. Can I validate demand before building anything?</p>
 
     <div class="ideas-grid">
       <div class="idea-card fade-up">
-        <div class="idea-title">AI Birth Chart</div>
+        <div class="idea-title">Birth Chart</div>
         <div class="card-tag-row" style="margin-bottom:10px">
-          <span class="tag tag-validation">Validation</span>
+          <span class="tag tag-validation">Validating</span>
         </div>
-        <div class="idea-desc">Enter birth date, time, and place. Get a plain-language reading of your Sun, Moon, and Rising that actually means something.</div>
+        <div class="idea-desc">Your Sun, Moon, and Rising in plain language. Not a horoscope. A reading.</div>
       </div>
 
       <div class="idea-card fade-up">
-        <div class="idea-title">AI Dream Interpreter</div>
+        <div class="idea-title">Dream Interpreter</div>
         <div class="card-tag-row" style="margin-bottom:10px">
-          <span class="tag tag-validation">Validation</span>
+          <span class="tag tag-validation">Validating</span>
         </div>
-        <div class="idea-desc">Describe your dream, get a personalized interpretation. Not a dictionary definition, but a reading specific to your symbols and narrative.</div>
+        <div class="idea-desc">Describe the dream, get the interpretation. Personalized, not a symbol dictionary.</div>
       </div>
 
       <div class="idea-card fade-up">
-        <div class="idea-title">Human Design Reader</div>
+        <div class="idea-title">Human Design</div>
         <div class="card-tag-row" style="margin-bottom:10px">
-          <span class="tag tag-validation">Validation</span>
+          <span class="tag tag-validation">Validating</span>
         </div>
-        <div class="idea-desc">Enter birth data. Get a plain-English breakdown of your type, profile, and centers, and what it actually means for how you live and work.</div>
+        <div class="idea-desc">Your type, profile, and centers. What it means for how you work and live.</div>
       </div>
     </div>
   </section>
@@ -727,6 +815,8 @@ footer {
     <span class="footer-built">a public experiment by <a href="https://twitter.com/nonfungibletara" style="color:var(--dusty);text-decoration:none;border-bottom:1px solid var(--border-2)">@nonfungibletara</a></span>
     <div class="footer-links">
       <a href="https://mybotpetunia.beehiiv.com/subscribe" target="_blank">Newsletter</a>
+      <a href="https://design.mybotpetunia.com">Design</a>
+      <a href="https://observability.mybotpetunia.com">Observability</a>
       <a href="https://legal.mybotpetunia.com">Legal</a>
     </div>
   </footer>
